@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+                <style>
+                    .ui-btn.headerbtn { 
+                        background: url("img/logo-header.png") no-repeat;
+                        width: 35px;
+                        height: 35px;
+                        border: none !important;                   
+                    }
+                    .ui-header {
+                        overflow:hidden;
+                    }
+                </style>
+                    <title>AdamMobile</title>
+    </head>
+    <body>
+
+////////////////////////////////////////////////////////////////////////////////////// Login
+        <div data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1>Login</h1>
+            </div>
+ 
+            <div data-role="main" class="ui-content">
+                <input id="username" type="text" placeholder="Enter Username">
+                <input id="password" type="password" placeholder="Enter Password">
+                <button onclick="login();">Login</button>
+                <a href="#pagetwo" id="page_two_link"></a>
+                <a href="#pagethree" id="page_three_link"></a>
+            </div>
+ 
+            <div data-role="footer" data-position="fixed">
+                <h1></h1>
+            </div>
+        </div> 
+ 
+////////////////////////////////////////////////////////////////////////////////////// Posts
+        <div data-role="page" id="pagetwo">
+            <div data-role="header" data-position="fixed">
+                  <h1>Posts</h1>
+			         <a href="#slider" class="ui-bth headerbtn" data-shadow="false"></a>
+            </div>
+ 
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" id="posts2">                 
+                </ul>
+            </div>
+ 
+            <div data-role="footer" data-position="fixed">
+                <h1></h1>
+            </div>
+        </div> 
+        
+////////////////////////////////////////////////////////////////////////////////////// Pages
+        <div data-role="page" id="pagethree">
+            <div data-role="header" data-position="fixed">
+                  <h1>Posts</h1>
+			         <a href="#slider" class="ui-bth headerbtn" data-shadow="false"></a>
+            </div>
+ 
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" id="posts3">                 
+                </ul>
+            </div>
+ 
+            <div data-role="footer" data-position="fixed">
+                <h1></h1>
+            </div>
+        </div>
+        
+        
+ ////////////////////////////////////////////////////////////////////////////////////// End       
+        <div data-role="panel" id="slider" data-position="left" data-display="push" data-theme="a">
+            <ul>
+                <li><a id="page2">Posts</a></li>
+                <li><a id="page3">Pages</a></li>
+            </ul>
+        </div>
+  ////////////////////////////////////////////////////////////////////////////////////// Sidebar
+        
+        <script type="text/javascript" src="cordova.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+            <script>
+               $(function() {
+                   $('#username').val($('#username').val() + '');
+                   $('#password').val($('#password').val() + '');
+                });
+            </script>
+            <script id="panel-init">
+                $(function() {
+                    $( "body>[data-role='panel']" ).panel();
+                });
+            </script>
+    </body>
+</html>
